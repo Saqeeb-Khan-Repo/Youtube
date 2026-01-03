@@ -1,0 +1,163 @@
+/* base */
+
+body {
+  margin: 0;
+  /* background: #0f0f0f; */
+  font-family: Arial, sans-serif;
+}
+
+/* left: menu + logo */
+
+.yt-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 180px;
+}
+
+.yt-icon-btn {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yt-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.yt-logo-icon img {
+  height: 20px;
+  cursor: pointer;
+}
+
+/* center: search */
+
+.yt-center {
+  flex: 0 1 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.yt-search {
+  flex: 1;
+  display: flex;
+}
+
+.yt-search input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #303030;
+  border-right: none;
+  background-color: #121212;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.yt-search input::placeholder {
+  color: #d8cfcf;
+}
+
+.yt-search-btn {
+  width: 64px;
+  border: 1px solid #303030;
+  background-color: #222222;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+
+.yt-search-btn:hover {
+  background-color: #313131;
+}
+
+.mic {
+  background-color: #181818;
+}
+
+/* right: dots + sign in */
+
+.yt-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 180px;
+  justify-content: flex-end;
+}
+
+.yt-signin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  border: 1px solid #3ea6ff;
+  background-color: transparent;
+  color: #3ea6ff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.yt-signin-btn:hover {
+  background-color: rgba(62, 166, 255, 0.1);
+}
+
+.profile-icon {
+  font-size: 20px;
+}
+
+/* responsive: tablet */
+
+@media (max-width: 900px) {
+  .yt-center {
+    flex: 0 1 400px;
+  }
+}
+
+/* responsive: mobile */
+
+@media (max-width: 600px) {
+  .yt-center {
+    display: none; /* hide full search bar on very small screens */
+  }
+
+  .yt-header {
+    padding: 0 8px;
+  }
+
+  .yt-right {
+    gap: 4px;
+  }
+
+  .yt-right::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* optionally show just search icon on mobile */
+  .yt-right::before {
+    content: "🔍";
+    color: #fff;
+    font-size: 18px;
+  }
+}

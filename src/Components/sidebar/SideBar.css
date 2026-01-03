@@ -1,0 +1,69 @@
+/* base: hidden off-screen */
+.yt-sidebar {
+  width: 240px;
+  height: calc(100vh - 56px);
+  background-color: #0f0f0f;
+  color: #fff;
+  padding-top: 8px;
+  border-right: 1px solid #303030;
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;          /* overlay */
+  top: 56px;                /* just under sticky header */
+  left: 0;
+  overflow-y: auto;
+
+  transform: translateX(-100%);     /* hidden by default */
+  transition: transform 0.25s ease-in-out;
+  z-index: 1000;
+}
+
+/* visible when isOpen=true */
+.yt-sidebar.open {
+  transform: translateX(0);
+}
+
+.yt-sidebar.closed {
+  transform: translateX(-100%);
+}
+
+/* nav items */
+.yt-sidebar-section {
+  padding: 8px 0;
+  border-bottom: 1px solid #303030;
+}
+
+.yt-nav-item {
+  width: 100%;
+  padding: 8px 24px;
+  border: none;
+  background: transparent;
+  color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.yt-nav-item:hover {
+  background-color: #272727;
+}
+
+.yt-nav-item.active {
+  background-color: #383838;
+  font-weight: 500;
+}
+
+/* remove this block if you do NOT want desktop sidebar space */
+/*
+@media (min-width: 1024px) {
+  .yt-sidebar {
+    position: sticky;
+    top: 56px;
+    transform: translateX(0);
+  }
+}
+*/

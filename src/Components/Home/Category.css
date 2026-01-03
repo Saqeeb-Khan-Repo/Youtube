@@ -1,0 +1,39 @@
+.yt-sidebar1 {
+  position: absolute;
+  margin-left: -20px;
+  top: 36px;      /* below header */
+  z-index: 900;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background-color: #202020;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  border-bottom: 1px solid #303030;
+}
+
+.yt-sidebar-section1 {
+  display: flex;
+  gap: 8px;
+}
+
+.yt-nav-item1 {
+  border: none;
+  background: #272727;
+  color: #f1f1f1;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.yt-nav-item1.active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.yt-nav-item1:hover {
+  background-color: #383838;
+}

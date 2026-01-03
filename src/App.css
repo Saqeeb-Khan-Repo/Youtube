@@ -234,3 +234,12 @@
   color: #fff;
 }
 
+.h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: deepskyblue;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+}

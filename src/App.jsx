@@ -41,6 +41,14 @@ const App = () => {
               <Route path="/liked-videos" element={<LikedVideos />} />
               <Route path="/downloads" element={<Downloads />} />
               <Route path="/settings" element={<Settings />} />
+              <Route
+                path="*"
+                element={
+                  <>
+                    <h1 className="h1">404 NOT FOUND </h1>
+                  </>
+                }
+              />
             </Routes>
           </main>
         </div>

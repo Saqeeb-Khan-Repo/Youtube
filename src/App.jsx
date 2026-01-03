@@ -1,6 +1,6 @@
 // App.jsx
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route , Link} from "react-router-dom";
 
 import Header from "./Components/Header/Header";
 import SideBar from "./Components/sidebar/SideBar";
@@ -46,6 +46,7 @@ const App = () => {
                 element={
                   <>
                     <h1 className="h1">404 NOT FOUND </h1>
+                    <Link to="/" className="h1">Go to Home </Link>
                   </>
                 }
               />

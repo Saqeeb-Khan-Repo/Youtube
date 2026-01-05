@@ -7,7 +7,6 @@ const VideoCard = ({ video, onPlay }) => {
   const videoId = video.id?.videoId;
 
   if (!videoId) return null;
-
   return (
     <div className="video-card" onClick={() => onPlay(videoId)}>
       <div className="video-thumb">

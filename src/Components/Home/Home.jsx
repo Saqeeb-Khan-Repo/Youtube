@@ -6,7 +6,7 @@ import VideoCard from "./VideoCard.jsx";
 import ChannelCard from "./ChannelCard.jsx";
 import { UseCategory } from "../store/Context.jsx";
 
-const Home = ({searchTerm}) => {
+const Home = ({ searchTerm }) => {
   const { selectedCategory } = UseCategory();
   const [videos, setVideos] = useState([]);
   const [playingVideoId, setPlayingVideoId] = useState(null); // NEW

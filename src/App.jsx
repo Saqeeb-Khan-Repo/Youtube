@@ -1,22 +1,23 @@
 // App.jsx
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route , Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import Header from "./Components/Header/Header";
 import SideBar from "./Components/sidebar/SideBar";
 import "./App.css";
 
 import Home from "./Components/Home/Home";
-import Channel from "./Components/Pages/Channel";
 import History from "./Components/Pages/History";
 import PlayList from "./Components/Pages/PlayList";
 import WatchLater from "./Components/Pages/WatchLater";
-import LikedVideos from "./Components/Pages/WatchLater";
+import LikedVideos from "./Components/Pages/LikedVideos";
 import Downloads from "./Components/Pages/Downloads";
 import Settings from "./Components/Pages/Settings";
+import Channel from "./Components/Home/Channel";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);
@@ -27,13 +28,15 @@ const App = () => {
   return (
     <Router>
       <div className="app-layout">
-        <Header onToggleSidebar={toggleSidebar} />
+        <Header
+          onToggleSidebar={toggleSidebar}
+          onSearch={(term) => setSearchTerm(term)}
+        />
 
-        {/* main content row: ONLY content here */}
         <div className="app-main">
           <main className="app-content">
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home searchTerm={searchTerm} />} />
               <Route path="/channel" element={<Channel />} />
               <Route path="/history" element={<History />} />
               <Route path="/playlist" element={<PlayList />} />
@@ -44,10 +47,12 @@ const App = () => {
               <Route
                 path="*"
                 element={
-                  <>
-                    <h1 className="h1">404 NOT FOUND </h1>
-                    <Link to="/" className="h1">Go to Home </Link>
-                  </>
+                  <div className="not-found">
+                    <h1 className="h1">404 NOT FOUND</h1>
+                    <Link to="/" className="h1">
+                      Go to Home
+                    </Link>
+                  </div>
                 }
               />
             </Routes>

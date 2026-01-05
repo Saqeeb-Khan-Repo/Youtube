@@ -1,0 +1,22 @@
+.yt-search-form {
+  display: flex;
+  flex: 1;
+}
+
+.yt-search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #303030;
+  border-right: none;
+  background-color: #121212;
+  color: #fff;
+  font-size: 14px;
+}
+
+.yt-search-btn {
+  width: 64px;
+  border: 1px solid #303030;
+  background-color: #222222;
+  color: #fff;
+  cursor: pointer;
+}

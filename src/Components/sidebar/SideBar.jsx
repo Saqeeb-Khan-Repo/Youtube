@@ -10,6 +10,7 @@ import {
 import { AiFillLike } from "react-icons/ai";
 import { SiYoutubeshorts } from "react-icons/si";
 import { Link } from "react-router-dom";
+import ChannelCard from "../Home/ChannelCard";
 
 const SideBar = ({ isOpen }) => {
   return (

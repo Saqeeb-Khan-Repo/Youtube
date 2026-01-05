@@ -5,8 +5,9 @@ import { LuMic } from "react-icons/lu";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import SearchBar from "../Home/SearchBar";
 
-const Header = ({ onToggleSidebar }) => {
+const Header = ({ onToggleSidebar, onSearch }) => {
   return (
     <header className="yt-header">
       <div className="yt-left">
@@ -27,10 +28,7 @@ const Header = ({ onToggleSidebar }) => {
 
       <div className="yt-center">
         <div className="yt-search">
-          <input placeholder="Search" />
-          <button className="yt-search-btn">
-            <CiSearch />
-          </button>
+          <SearchBar onSearch={onSearch} />
         </div>
         <button className="yt-icon-btn mic">
           <LuMic />

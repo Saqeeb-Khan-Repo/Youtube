@@ -4,31 +4,28 @@ import { fetchFromApi } from "../utils/fetchApi.js";
 import Category from "./Category.jsx";
 import VideoCard from "./VideoCard.jsx";
 import ChannelCard from "./ChannelCard.jsx";
+import { UseCategory } from "../store/Context.jsx";
 
-const Home = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Coding");
+const Home = ({searchTerm}) => {
+  const { selectedCategory } = UseCategory();
   const [videos, setVideos] = useState([]);
   const [playingVideoId, setPlayingVideoId] = useState(null); // NEW
 
   useEffect(() => {
-    fetchFromApi(`search?part=snippet&q=${selectedCategory}`).then((data) => {
+    const query = searchTerm || selectedCategory;
+    fetchFromApi(`search?part=snippet&q=${query}`).then((data) => {
       setVideos(data.items || []);
       setPlayingVideoId(null); // close player when category changes
     });
-  }, [selectedCategory]);
+  }, [selectedCategory, searchTerm]);
 
   return (
     <div className="pages">
-      <Category
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
+      <Category selectedCategory={selectedCategory} />
       <div className="videos-grid">
         {videos.map((item, idx) => (
           <div key={idx}>
-            {item.id?.videoId && (
-              <VideoCard video={item} onPlay={(id) => setPlayingVideoId(id)} />
-            )}
+            {item.id?.videoId && <VideoCard video={item} />}
             {item.id?.channelId && <ChannelCard channelDetails={item} />}
           </div>
         ))}
@@ -61,7 +58,6 @@ const Home = () => {
                 <iframe
                   src={`https://www.youtube.com/embed/${playingVideoId}`}
                   title="YouTube video player"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>

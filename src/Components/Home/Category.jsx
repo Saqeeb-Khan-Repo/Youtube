@@ -1,25 +1,28 @@
 // Category.jsx
 import "./Category.css";
+import { UseCategory } from "../store/Context";
 
-const Category = ({ selectedCategory, setSelectedCategory }) => {
+const Category = () => {
+  const { selectedCategory, setSelectedCategory } = UseCategory();
   const categories = [
-    "Nova Design",
-    "Greatstack",
+    "All",
+    "Movie",
+    "Gaming",
+    "Live",
+    "News",
+    "Sports",
+    "Programming",
     "ReactJS",
     "JavaScript",
-    "web development",
-    "JS Mastery",
-    "codewithharry",
-    "Cricket",
-    "Nodejs",
-    "Fireship",
-    "Microservices",
-    "freecodecamp",
-    "Low level design",
-    "high level design",
-    "system design",
-    "computer fundamentals",
+    "Web development",
+    "NodeJS",
+    "System design",
+    "Computer fundamentals",
+    "Podcasts",
+    "Recently uploaded",
+    "Watched",
   ];
+
 
   return (
     <nav className="yt-sidebar1">

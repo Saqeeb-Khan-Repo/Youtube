@@ -7,6 +7,6 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
-    base: env.VITE_BASE_PATH || "/", // safe: env might not have it
+    base: env.VITE_BASE_PATH || "/Youtube", // safe: env might not have it
   };
 });

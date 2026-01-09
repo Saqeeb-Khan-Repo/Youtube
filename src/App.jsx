@@ -6,14 +6,16 @@ import Header from "./Components/Header/Header";
 import SideBar from "./Components/sidebar/SideBar";
 import "./App.css";
 
-import Home from "./Components/Home/Home";
-import History from "./Components/Pages/History";
-import PlayList from "./Components/Pages/PlayList";
-import WatchLater from "./Components/Pages/WatchLater";
-import LikedVideos from "./Components/Pages/LikedVideos";
-import Downloads from "./Components/Pages/Downloads";
-import Settings from "./Components/Pages/Settings";
-import Channel from "./Components/Home/Channel";
+import {
+  Home,
+  Channel,
+  Downloads,
+  History,
+  LikedVideos,
+  PlayList,
+  Settings,
+  WatchLater,
+} from "./Components/Pages/index.js";
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,6 +26,10 @@ const App = () => {
   };
 
   const isMobile = window.innerWidth <= 765;
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+  
 
   return (
     <Router>
@@ -60,7 +66,7 @@ const App = () => {
         </div>
 
         {/* sidebar as overlay, NOT part of flex layout */}
-        <SideBar isOpen={isSidebarOpen} />
+        <SideBar isOpen={isSidebarOpen} closeSidebar={closeSidebar} />
 
         {isMobile && isSidebarOpen && (
           <div className="sidebar-backdrop" onClick={toggleSidebar} />

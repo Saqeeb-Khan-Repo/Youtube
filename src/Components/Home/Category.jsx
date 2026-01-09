@@ -6,23 +6,15 @@ const Category = () => {
   const { selectedCategory, setSelectedCategory } = UseCategory();
   const categories = [
     "All",
-    "Movie",
+    "Movies",
     "Gaming",
-    "Live",
-    "News",
     "Sports",
-    "Programming",
+    "Courses",
     "ReactJS",
     "JavaScript",
-    "Web development",
-    "NodeJS",
     "System design",
     "Computer fundamentals",
-    "Podcasts",
-    "Recently uploaded",
-    "Watched",
   ];
-
 
   return (
     <nav className="yt-sidebar1">

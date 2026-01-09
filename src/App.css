@@ -243,3 +243,8 @@
   font-family: "Times New Roman", Times, serif;
   font-weight: 900;
 }
+.h2{
+  text-align: center;
+  font-size: 3rem;
+  color: blueviolet;
+}

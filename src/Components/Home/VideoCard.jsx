@@ -21,4 +21,4 @@ const VideoCard = ({ video, onPlay }) => {
   );
 };
 
-export default VideoCard;
+export default VideoCard

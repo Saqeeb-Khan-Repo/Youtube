@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Mobile friendly -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>TubePlex - Watch & Discover Videos</title>
+    <!-- Title (shown in search + tab) -->
+    <title>TubePlex - Watch & Discover Videos Like YouTube</title>
 
-    <!-- YouTube-like favicon from YouTube assets -->
+    <!-- Favicon (YouTube-style) -->
     <link
       rel="icon"
       type="image/x-icon"
@@ -22,39 +25,42 @@
       href="https://www.youtube.com/s/desktop/3fd9a6f6/img/favicon_96x96.png"
     />
 
-    <!-- Core SEO -->
+    <!-- Core SEO meta tags -->
     <meta
       name="description"
-      content="TubePlex is a YouTube-style video platform. Discover trending videos, channels, music, gaming, and more with fast search and inline playback."
+      content="TubePlex is a YouTube-style video site. Discover trending videos, channels, music, gaming, and more with fast search and inline playback."
     />
     <meta
       name="keywords"
-      content="TubePlex, youtube clone, videos, streaming, channels, music, gaming"
+      content="TubePlex, youtube clone, video streaming, watch videos, channels, music, gaming"
     />
-    <meta name="robots" content="index,follow" />
     <meta name="author" content="TubePlex" />
+    <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
+    <!-- Canonical URL (avoid duplicate URL issues) -->
+    <link rel="canonical" href="https://your-domain.com/" />
+
+    <!-- Open Graph for social sharing -->
     <meta property="og:title" content="TubePlex - Watch & Discover Videos" />
     <meta
       property="og:description"
-      content="Discover trending videos and channels with TubePlex, a YouTube-like experience built with React."
+      content="Discover and watch trending videos and channels with a YouTube-like experience."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://your-domain.com" />
+    <meta property="og:url" content="https://your-domain.com/" />
     <meta property="og:site_name" content="TubePlex" />
     <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="TubePlex - Watch & Discover Videos" />
     <meta
       name="twitter:description"
-      content="Trending videos, channels, and more."
+      content="Trending videos, channels, music, and gaming."
     />
     <meta name="twitter:image" content="https://your-domain.com/og-image.jpg" />
 
-    <!-- Basic structured data -->
+    <!-- Basic structured data (helps Google understand your site) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -70,7 +76,7 @@
     </script>
   </head>
   <body>
-    <div id="root"><!--ssr-outlet--></div>
-    <script type="module" src="/src/entry-client.jsx"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -9,23 +9,15 @@ const Home = ({ searchTerm }) => {
   const { selectedCategory } = UseCategory();
   const [videos, setVideos] = useState([]);
   const [playingVideoId, setPlayingVideoId] = useState(null);
-<<<<<<< HEAD:src/Components/Pages/Home.jsx
 
   const handlePlay = (id) => {
     setPlayingVideoId(id);
   };
-=======
->>>>>>> f35221dde61624f29a0cc5403bf5206ce50c3165:src/Components/Home/Home.jsx
-
   useEffect(() => {
     const query = searchTerm || selectedCategory;
 
     fetchFromApi(`search?part=snippet&q=${query}`).then((data) => {
-<<<<<<< HEAD:src/Components/Pages/Home.jsx
       setVideos(data.items || []);
-=======
-      setVideos(data?.items || []);
->>>>>>> f35221dde61624f29a0cc5403bf5206ce50c3165:src/Components/Home/Home.jsx
       setPlayingVideoId(null);
     });
   }, [selectedCategory, searchTerm]);
@@ -36,38 +28,29 @@ const Home = ({ searchTerm }) => {
 
       <div className="videos-grid">
         {videos.map((item, idx) => (
-          <div key={idx}>
-<<<<<<< HEAD:src/Components/Pages/Home.jsx
+          <div
+            key={
+              item.id?.videoId ||
+              item.id?.channelId ||
+              item.id?.playlistId ||
+              idx
+            }
+          >
             {item.id?.videoId && <VideoCard video={item} onPlay={handlePlay} />}
             {item.id?.channelId && <ChannelCard channelDetails={item} />}
-=======
-            {item.id?.videoId && (
-              <VideoCard
-                video={item}
-                onPlay={setPlayingVideoId}
-              />
-            )}
-
-            {item.id?.channelId && (
-              <ChannelCard channelDetails={item} />
-            )}
->>>>>>> f35221dde61624f29a0cc5403bf5206ce50c3165:src/Components/Home/Home.jsx
+            {item.id?.playlistId && <div>Playlist: {item.snippet?.title}</div>}
           </div>
         ))}
       </div>
 
-<<<<<<< HEAD:src/Components/Pages/Home.jsx
-      {/* Popup player */}
-=======
->>>>>>> f35221dde61624f29a0cc5403bf5206ce50c3165:src/Components/Home/Home.jsx
       {playingVideoId && (
         <>
           <div
             className="inline-player-backdrop"
             onClick={() => setPlayingVideoId(null)}
           />
-
           <div className="inline-player">
+            {/* Add loading spinner if needed */}
             <div className="inline-player-inner">
               <div className="inline-player-actions">
                 <button
@@ -77,18 +60,14 @@ const Home = ({ searchTerm }) => {
                   Close
                 </button>
               </div>
-
               <div className="inline-player-frame-wrapper">
                 <iframe
-                  src={`https://www.youtube.com/embed/${playingVideoId}?autoplay=1`}
+                  src={`https://www.youtube.com/embed/${playingVideoId}?autoplay=1&rel=0`}
                   title="YouTube video player"
-<<<<<<< HEAD:src/Components/Pages/Home.jsx
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-=======
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   frameBorder="0"
-                  allow="autoplay; encrypted-media"
->>>>>>> f35221dde61624f29a0cc5403bf5206ce50c3165:src/Components/Home/Home.jsx
                   allowFullScreen
+                  loading="lazy"
                 />
               </div>
             </div>

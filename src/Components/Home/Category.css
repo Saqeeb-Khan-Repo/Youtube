@@ -6,11 +6,12 @@
   width: 100%;
   height: 56px;
   padding: 0 16px;
-  background-color: #202020;
+  background-color: transparent;
   display: flex;
   align-items: center;
   overflow-x: auto;
   border-bottom: 1px solid #303030;
+  margin-top: 40px;
 }
 
 .yt-sidebar-section1 {
@@ -20,10 +21,10 @@
 
 .yt-nav-item1 {
   border: none;
-  background: #272727;
+  background: #323131;
   color: #f1f1f1;
   padding: 6px 12px;
-  border-radius: 16px;
+  border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
@@ -35,5 +36,6 @@
 }
 
 .yt-nav-item1:hover {
-  background-color: #383838;
+  background-color: #fffdfd;
+  color: black;
 }

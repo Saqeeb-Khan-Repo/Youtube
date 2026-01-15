@@ -41,7 +41,7 @@ const Header = ({ onToggleSidebar, onSearch }) => {
         <div className="yt-search">
           <SearchBar onSearch={onSearch} />
         </div>
-        <button className="yt-icon-btn mic">
+        <button className="yt-icon-btn mic text-4xl">
           <LuMic />
         </button>
         {/* Close button - only show when mobile search is open */}

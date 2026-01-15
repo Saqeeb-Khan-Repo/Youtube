@@ -1,20 +1,24 @@
+@import "tailwindcss";
 /* header */
 .yt-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 96px;
-  padding: 0 16px;
-  background-color: #202020;
+  height: 100px;
+  padding: 20px 16px;
+  background-color: #181717;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 /* app layout */
 .app-content {
   flex: 1;
-  overflow-y: auto;
+  /* overflow-y: auto; */
+  margin-top: 50px;
+  overflow: hidden;
 }
 
 /* wrapper for category bar + videos (Home page) */
@@ -243,7 +247,7 @@
   font-family: "Times New Roman", Times, serif;
   font-weight: 900;
 }
-.h2{
+.h2 {
   text-align: center;
   font-size: 3rem;
   color: blueviolet;

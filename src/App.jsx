@@ -29,20 +29,21 @@ const App = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
-  
 
   return (
     <Router>
-      <div className="app-layout">
+      <div className="app-layout bg-black">
         <Header
           onToggleSidebar={toggleSidebar}
           onSearch={(term) => setSearchTerm(term)}
         />
 
-        <div className="app-main">
+        <div className="app-main bg-black text-white font-bold">
           <main className="app-content">
             <Routes>
               <Route path="/" element={<Home searchTerm={searchTerm} />} />
+              <Route path="/Youtube" element={<Home />} />
+
               <Route path="/channel" element={<Channel />} />
               <Route path="/history" element={<History />} />
               <Route path="/playlist" element={<PlayList />} />

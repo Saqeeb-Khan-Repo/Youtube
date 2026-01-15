@@ -33,7 +33,7 @@ body {
 }
 
 .yt-logo-icon img {
-  height: 20px;
+  height: 30px;
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@ body {
   border-right: none;
   background-color: #121212;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 20px;
 }
 
@@ -77,7 +77,8 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .yt-search-btn:hover {
@@ -145,7 +146,7 @@ body {
     background: #0f0f0f;
     padding: 12px;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     animation: searchSlideDown 0.3s ease;
   }
 
@@ -158,14 +159,13 @@ body {
   }
 
   @keyframes searchSlideDown {
-    from { 
-      transform: translateY(-100%); 
-      opacity: 0; 
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
     }
-    to { 
-      transform: translateY(0); 
-      opacity: 1; 
+    to {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 }
-

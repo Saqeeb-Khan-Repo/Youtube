@@ -6,13 +6,13 @@ const Category = () => {
   const { selectedCategory, setSelectedCategory } = UseCategory();
   const categories = [
     "All",
-    "Movies",
+    "new Movies",
     "Gaming",
-    "Sports",
+    "Kids",
     "Courses",
     "ReactJS",
     "JavaScript",
-    "System design",
+    "shorts",
     "Computer fundamentals",
   ];
 
